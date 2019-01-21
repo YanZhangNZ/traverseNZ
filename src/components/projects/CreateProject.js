@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {connect} from '.react-redux';
+import {connect} from 'react-redux';
 import { createProject } from '../../store/actions/projectActions';
 
 class CreateProject extends Component { 
@@ -11,6 +11,7 @@ class CreateProject extends Component {
         }
     }
     handleChange = (e) => {
+        debugger;
         this.setState({
             [e.target.id]:e.target.value
         })
@@ -18,6 +19,7 @@ class CreateProject extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         // console.log(this.state)
+        debugger;
         this.props.createProject(this.state)
     }
   
@@ -45,6 +47,7 @@ class CreateProject extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
+    debugger;
     return {
         createProject: (project)=>dispatch(createProject(project))
     }
